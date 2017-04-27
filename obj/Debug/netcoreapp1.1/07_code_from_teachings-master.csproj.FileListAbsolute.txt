@@ -1,0 +1,8 @@
+C:\Users\thest\Desktop\07_code_from_teachings-master\bin\Debug\netcoreapp1.1\07_code_from_teachings-master.deps.json
+C:\Users\thest\Desktop\07_code_from_teachings-master\bin\Debug\netcoreapp1.1\07_code_from_teachings-master.runtimeconfig.json
+C:\Users\thest\Desktop\07_code_from_teachings-master\bin\Debug\netcoreapp1.1\07_code_from_teachings-master.runtimeconfig.dev.json
+C:\Users\thest\Desktop\07_code_from_teachings-master\bin\Debug\netcoreapp1.1\07_code_from_teachings-master.dll
+C:\Users\thest\Desktop\07_code_from_teachings-master\bin\Debug\netcoreapp1.1\07_code_from_teachings-master.pdb
+C:\Users\thest\Desktop\07_code_from_teachings-master\obj\Debug\netcoreapp1.1\07_code_from_teachings-master.AssemblyInfo.cs
+C:\Users\thest\Desktop\07_code_from_teachings-master\obj\Debug\netcoreapp1.1\07_code_from_teachings-master.dll
+C:\Users\thest\Desktop\07_code_from_teachings-master\obj\Debug\netcoreapp1.1\07_code_from_teachings-master.pdb
