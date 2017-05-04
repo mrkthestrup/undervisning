@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using ConsoleApplication.Models;
+using ConsoleApplication.Models.Entities;
 using ConsoleApplication.Models.Repositories;
+using ConsoleApplication.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConsoleApplication.Controllers
@@ -14,10 +15,14 @@ namespace ConsoleApplication.Controllers
 
        //Loosly Coupled 
         private IStudentRepository studentRepository;
+        private ICourseRepository courseRepository;
+        private IEnrollmentRepository enrollmentRepository;
 
-        public StudentController(IStudentRepository studentRepository)
+        public StudentController(IStudentRepository studentRepository, ICourseRepository courseRepository, IEnrollmentRepository enrollmentRepository)
         {
             this.studentRepository = studentRepository;
+            this.courseRepository = courseRepository;
+            this.enrollmentRepository = enrollmentRepository;
         }
 
         // Read
@@ -85,6 +90,36 @@ namespace ConsoleApplication.Controllers
             
             return RedirectToAction("Index");
         }
+
+        public IActionResult Details(int id)
+        {
+            var student = studentRepository.Get(id);
+            return View(student);
+        }
+
+        public IActionResult Course(int id)
+        {
+            StudentCourseViewModel stcvm = new StudentCourseViewModel(); 
+            stcvm.Student = studentRepository.Get(id);
+            stcvm.Courses = courseRepository.GetAll();  
+            
+
+            return View(stcvm);
+
+        }
+        [HttpPost]
+        public IActionResult Course(Enrollment c)
+        {
+             if (ModelState.IsValid)
+            {
+
+                enrollmentRepository.Save(c);
+           
+                return RedirectToAction("Index");
+            }
+            return View("Index");
+        }
+
 
     }
 }

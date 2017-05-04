@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using ConsoleApplication.Models;
 
-namespace _06_code_from_teachings_DEV.Migrations
+namespace _07_code_from_teachingsmaster.Migrations
 {
     [DbContext(typeof(MyDbContext))]
     partial class MyDbContextModelSnapshot : ModelSnapshot
@@ -15,7 +15,7 @@ namespace _06_code_from_teachings_DEV.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
 
-            modelBuilder.Entity("ConsoleApplication.Models.Course", b =>
+            modelBuilder.Entity("ConsoleApplication.Models.Entities.Course", b =>
                 {
                     b.Property<int>("CourseID")
                         .ValueGeneratedOnAdd();
@@ -29,7 +29,7 @@ namespace _06_code_from_teachings_DEV.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("ConsoleApplication.Models.Enrollment", b =>
+            modelBuilder.Entity("ConsoleApplication.Models.Entities.Enrollment", b =>
                 {
                     b.Property<int>("EnrollmentID")
                         .ValueGeneratedOnAdd();
@@ -49,7 +49,7 @@ namespace _06_code_from_teachings_DEV.Migrations
                     b.ToTable("Enrollments");
                 });
 
-            modelBuilder.Entity("ConsoleApplication.Models.Student", b =>
+            modelBuilder.Entity("ConsoleApplication.Models.Entities.Student", b =>
                 {
                     b.Property<int>("StudentID")
                         .ValueGeneratedOnAdd();
@@ -68,14 +68,14 @@ namespace _06_code_from_teachings_DEV.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("ConsoleApplication.Models.Enrollment", b =>
+            modelBuilder.Entity("ConsoleApplication.Models.Entities.Enrollment", b =>
                 {
-                    b.HasOne("ConsoleApplication.Models.Course", "Course")
+                    b.HasOne("ConsoleApplication.Models.Entities.Course", "Course")
                         .WithMany("Enrollments")
                         .HasForeignKey("CourseID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("ConsoleApplication.Models.Student", "Student")
+                    b.HasOne("ConsoleApplication.Models.Entities.Student", "Student")
                         .WithMany("Enrollments")
                         .HasForeignKey("StudentID")
                         .OnDelete(DeleteBehavior.Cascade);

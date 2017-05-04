@@ -1,16 +1,10 @@
-@model IEnumerable<ConsoleApplication.Models.Student>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Student</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    </head>
-    <body class="container" style="margin-top: 40px">
-        <div class="jumbotron">
-            <h1>Students</h1>
-        </div>
+@model IEnumerable<ConsoleApplication.Models.Entities.Student>
+
+
+@{
+    ViewBag.Title= "Studnet";
+    Layout = "../Shared/_Layout.cshtml";
+}
      
             <a class="btn btn-success" asp-controller="Student" asp-action="Create">New Student</a>
         
@@ -44,9 +38,4 @@
      
       </table>
       
-      <address>
-          &copy; Kea - clbo
-      </address>
-    
-    </body>
-</html>
+     

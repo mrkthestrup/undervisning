@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ConsoleApplication.Models;
+using ConsoleApplication.Models.Entities;
 using ConsoleApplication.Models.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,7 +30,7 @@ public class StudentRepository : IStudentRepository
 
     public Student Get(int id)
     {
-        Student student = _db.Students.Find(id);
+        Student student = _db.Students.Include(s => s.Enrollments).ThenInclude(e => e.Course).Where(r=> r.StudentID == id).FirstOrDefault();
        return student;
     }
 

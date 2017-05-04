@@ -20,6 +20,8 @@ namespace ConsoleApplication
             //       dotnet run
             servises.AddMvc();
             servises.AddScoped<IStudentRepository, StudentRepository>();
+            servises.AddScoped<ICourseRepository, CourseRepository>();
+            servises.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
         }
 
        public void Configure(IApplicationBuilder app, ILoggerFactory logger, MyDbContext context) // 1. add a context parameter
